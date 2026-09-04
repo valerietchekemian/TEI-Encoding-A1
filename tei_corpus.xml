@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>TEI Encoding of A1 Written Productions</title>
+        <respStmt>
+          <resp>Encoding</resp>
+          <name>[ton nom]</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Unpublished. Work in progress. Learner names anonymised.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Short written productions collected from A1-level (CEFR)
+        learners of French as a foreign language, Spanish (Venezuela)
+        native speakers. Learner names have been anonymised as
+        Apprenant1 and Apprenant2.</p>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc>
+      <!-- Closed error typology used throughout the corpus.
+           Add new <category> entries here if the typology evolves,
+           and reuse the same @xml:id values as @type on <corr>. -->
+      <classDecl>
+        <taxonomy xml:id="typologie-erreurs">
+          <category xml:id="accord-genre"><catDesc>Erreur d'accord en genre</catDesc></category>
+          <category xml:id="accord-nombre"><catDesc>Erreur d'accord en nombre</catDesc></category>
+          <category xml:id="accord-sujet-verbe"><catDesc>Erreur d'accord sujet-verbe</catDesc></category>
+          <category xml:id="fusion-prepositionnelle"><catDesc>Fusion préposition + article non réalisée (à+le/les)</catDesc></category>
+          <category xml:id="ordre-des-mots"><catDesc>Ordre des mots incorrect</catDesc></category>
+          <category xml:id="structure-verbale"><catDesc>Construction verbale calquée sur la langue source</catDesc></category>
+          <category xml:id="interference-orthographique"><catDesc>Orthographe influencée par la langue source</catDesc></category>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+
+    <profileDesc>
+      <particDesc>
+        <listPerson>
+          <person xml:id="apprenant1">
+            <p>Anonymised learner, native language: Spanish (Venezuela).</p>
+          </person>
+          <person xml:id="apprenant2">
+            <p>Anonymised learner, native language: Spanish (Venezuela).</p>
+          </person>
+        </listPerson>
+      </particDesc>
+      <textClass>
+        <catRef target="#niveau-A1"/>
+      </textClass>
+    </profileDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+
+      <div xml:id="texte1" type="production-ecrite" who="#apprenant1">
+        <p>Chère Laury, Comment tu <choice><sic>va</sic><corr type="accord-sujet-verbe">vas</corr></choice> ?
+        <choice><sic>Je voudrai inviter vous</sic><corr type="ordre-des-mots">Je voudrais vous inviter</corr></choice>
+        à passer tes vacances dans mon pays, Venezuela il y a
+        <choice><sic>plagés bels</sic><corr type="interference-orthographique">plages belles</corr></choice>.
+        Nous pouvons visiter aussi les montagnes.
+        <choice><sic>Je propose tu la date</sic><corr type="structure-verbale">Je te propose la date</corr></choice>
+        <choice><sic>de avril à may</sic><corr type="interference-orthographique">d'avril à mai</corr></choice>
+        <choice><sic>pour tu venir</sic><corr type="structure-verbale">pour que tu viennes</corr></choice>
+        et passer
+        <choice><sic>a bon vacances</sic><corr type="accord-genre">de bonnes vacances</corr></choice>.
+        Pour confirmer
+        <choice><sic>écrite a mèl</sic><corr type="structure-verbale">écris un mail</corr></choice>
+        à bientôt.</p>
+        <signed>Apprenant1</signed>
+      </div>
+
+      <div xml:id="texte2" type="production-ecrite" who="#apprenant2">
+        <p>Chère amie, Je t'invite à passer des vacances d'été ici. Vénézuéla.
+        Nous pouvons aller à la plage,
+        <choice><sic>à les boîtes</sic><corr type="fusion-prepositionnelle">aux boîtes</corr></choice>,
+        <choice><sic>à les rues comerçantes</sic><corr type="fusion-prepositionnelle">aux rues commerçantes</corr></choice>
+        et les centres
+        <choice><sic>historyques</sic><corr type="interference-orthographique">historiques</corr></choice>.
+        Ici,
+        <choice><sic>le temperature</sic><corr type="accord-genre">la température</corr></choice>
+        est
+        <choice><sic>ideale</sic><corr type="interference-orthographique">idéale</corr></choice>,
+        les personnes sont très
+        <choice><sic>sympathyques</sic><corr type="interference-orthographique">sympathiques</corr></choice>
+        et ma famille très amusante. J'espère que tu peux venir.
+        Je t'embrasse très fort.</p>
+        <signed>Apprenant2</signed>
+        <postscript>P.S : Je peux aller à l'aéroport</postscript>
+      </div>
+
+    </body>
+  </text>
+</TEI>
