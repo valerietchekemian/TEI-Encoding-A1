@@ -1,4 +1,4 @@
-![bannière](banniere.png)
+![bannière](assets/TEI%20ENCODING%20%C2%B7FLE%20Learner%20Corpus%20%C2%B7%20Error%20Annotation%20.png)
 
 # TEI Encoding of A1 Written Productions
 
