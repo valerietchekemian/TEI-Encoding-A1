@@ -3,7 +3,7 @@
 # TEI Encoding of A1 Written Productions
 
 TEI encoding of short A1-level written productions in French as a foreign
-language (FLE), with a focus on error typology. Encoded by [Valerie.Tchekemian].
+language (FLE), with a focus on error typology. 
 
 ## About
 
