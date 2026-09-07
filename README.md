@@ -3,13 +3,13 @@
 # TEI Encoding of A1 Written Productions
 
 TEI encoding of short A1-level written productions in French as a foreign
-language (FFL), with a focus on error typology. Encoded by [ton nom].
+language (FLE), with a focus on error typology. Encoded by [Valerie.Tchekemian].
 
 ## About
 
 This project applies TEI (Text Encoding Initiative) encoding to short
-written productions at A1 level (CEFR), collected as part of a French as a
-Foreign Language (FFL) learner corpus. The project focuses on identifying
+written productions at A1 level (CECR), collected as part of a French as a
+Foreign Language (FLE) learner corpus. The project focuses on identifying
 and typifying learner errors to support corpus-based learning design.
 
 ## TEI modules used
