@@ -23,6 +23,9 @@
            and reuse the same @xml:id values as @type on <corr>.  -->
 <classDecl>
 <taxonomy xml:id="typologie-erreurs">
+<category xml:id="niveau-A1">
+<catDesc>Niveau A1 selon le CECR</catDesc>
+</category>
 <category xml:id="accord-genre">
 <catDesc>Erreur d'accord en genre</catDesc>
 </category>
