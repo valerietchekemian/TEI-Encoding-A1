@@ -54,10 +54,10 @@ L'intelligence artificielle générative a été utilisée comme outil d'assista
 
 Elle a notamment contribué à :
 
-explorer et clarifier la structure TEI/XML ;
-proposer des pistes de catégorisation des erreurs ;
-vérifier la cohérence du balisage et des références ;
-accélérer certaines tâches répétitives de relecture et de structuration.
+- explorer et clarifier la structure TEI/XML ;
+- proposer des pistes de catégorisation des erreurs ;
+- vérifier la cohérence du balisage et des références ;
+- accélérer certaines tâches répétitives de relecture et de structuration.
 
 Les choix d'encodage, l'interprétation des productions d'apprenants et la validation finale des catégories restent sous contrôle humain.
 
