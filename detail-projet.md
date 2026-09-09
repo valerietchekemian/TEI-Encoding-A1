@@ -48,6 +48,21 @@ productions plutôt que d'exemples construits.
 
 ## Méthodologie
 
+### Utilisation de l'IA
+
+L'intelligence artificielle générative a été utilisée comme outil d'assistance et de réflexion, et non comme substitut à l'analyse pédagogique.
+
+Elle a notamment contribué à :
+
+explorer et clarifier la structure TEI/XML ;
+proposer des pistes de catégorisation des erreurs ;
+vérifier la cohérence du balisage et des références ;
+accélérer certaines tâches répétitives de relecture et de structuration.
+
+Les choix d'encodage, l'interprétation des productions d'apprenants et la validation finale des catégories restent sous contrôle humain.
+
+Cette démarche permet d'explorer une utilisation de l'IA dans un processus de learning design augmenté, où l'automatisation de certaines tâches libère du temps pour l'analyse pédagogique et la prise de décision.
+
 ### Encodage
 
 Chaque texte est encodé en XML/TEI. Le texte "de surface" reste lisible
