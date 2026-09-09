@@ -97,9 +97,6 @@ existante.
 
 - structure du dépôt mise en place (`README.md`, `tei_corpus.xml`,
   `stile.css`, dossiers `sources/`, `assets/`, `analysis/`)
-- identité visuelle définie (palette pastel bleu, typographies Space
-  Grotesk / Inter), cohérente avec le reste du portfolio (Notion,
-  LinkedIn, Instagram)
 - les deux textes authentiques transcrits et encodés en TEI avec la
   typologie d'erreurs
 - anonymisation des apprenants
