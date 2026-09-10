@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 # Charger le fichier TEI
-tree = ET.parse("../tei_corpus.xml")
+tree = ET.parse("tei_corpus.xml")
 root = tree.getroot()
 
 # Namespace TEI
