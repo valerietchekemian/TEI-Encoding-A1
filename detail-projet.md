@@ -1,77 +1,52 @@
-# TEI Encoding A1 — détail du projet
+# TEI Encoding A1 — Project Details
 
-## Origine
+## Origins
 
-Ce projet est né en découvrant sur GitHub le travail d'Erica Cau et Alice
-Isola : *Progetto Esame Codifica di Testi* — l'encodage TEI de trois cartes
-postales manuscrites conservées au Museo civico etnografico Giovanni
-Podenzana, réalisé dans le cadre d'un examen universitaire (Unipi,
-2018/2019).
+This project was inspired by the work of Erica Cau and Alice Isola discovered on GitHub: *Progetto Esame Codifica di Testi* — a TEI encoding project involving three handwritten postcards preserved at the Museo civico etnografico Giovanni Podenzana, carried out as part of a university examination (Unipi, 2018/2019).
 
-Ce projet montrait comment transformer un document brut (une carte
-postale manuscrite) en données structurées et interrogeables, via le
-standard TEI (Text Encoding Initiative), puis comment présenter ce
-travail sous forme d'un mini-site (XML → transformation XSLT → HTML +
-CSS/JS).
+The project demonstrated how a raw document (a handwritten postcard) could be transformed into structured and queryable data using the TEI (Text Encoding Initiative) standard, and how this work could then be presented as a mini-website (XML → XSLT transformation → HTML + CSS/JS).
 
-## Objectif du projet
+## Project Objective
 
-Appliquer la même logique de structuration à un objet différent : des
-productions écrites de niveau A1 (CECR), rédigées par des apprenants de
-français langue étrangère, dans une perspective de **learning design**.
+The aim is to apply the same structuring approach to a different type of material: **A1-level written productions (CEFR)** produced by learners of French as a Foreign Language, from a **learning design** perspective.
 
-L'objectif n'est pas de transcrire un document ancien, mais de :
+The objective is not to transcribe a historical document, but to:
 
-1. **repérer et typer les erreurs** présentes dans des productions
-   authentiques d'apprenants,
-2. rendre ce repérage **interrogeable** (compter, comparer, filtrer),
-3. utiliser ces données pour **informer la conception pédagogique**
-   (identifier les points de difficulté récurrents à ce niveau).
+1. **identify and classify errors** found in authentic learner productions;
+2. make this analysis **queryable** (count, compare and filter errors);
+3. use these data to **inform pedagogical design** by identifying recurring areas of difficulty at this level.
 
 ## Corpus
 
-Le corpus de départ est constitué de **deux productions écrites
-authentiques**, niveau A1, rédigées par des apprenants hispanophones
-(Venezuela). Les deux textes suivent la même consigne : une lettre
-d'invitation à passer des vacances dans son pays.
+The initial corpus consists of **two authentic A1-level written productions** by Spanish-speaking learners from Venezuela. Both texts follow the same writing prompt: an invitation letter to spend a holiday in the learner's country.
 
-Les prénoms réels des apprenants ont été retirés et remplacés par des
-identifiants anonymes (`Apprenant1`, `Apprenant2`) dans le fichier
-encodé, par souci de confidentialité.
+The learners' real first names have been removed and replaced with anonymous identifiers (`Apprenant1`, `Apprenant2`) in the encoded file, for confidentiality purposes.
 
-Une piste explorée puis mise de côté pour l'instant : comparer ce profil
-d'erreurs (interférence avec la langue maternelle) à celui d'apprenants
-porteurs de dyslexie, dont les erreurs relèvent d'une autre origine
-(traitement du langage écrit plutôt que compétence linguistique). Cet
-axe pourra être repris plus tard, à condition de disposer de vraies
-productions plutôt que d'exemples construits.
+One possible research direction was explored and set aside for the time being: comparing this error profile (interference from the learners' first language) with that of learners with dyslexia, whose errors may have a different origin (written-language processing rather than linguistic competence). This line of inquiry could be revisited later, provided that authentic learner productions are available rather than constructed examples.
 
-## Méthodologie
+## Methodology
 
-### Utilisation de l'IA
+### Use of AI
 
-L'intelligence artificielle générative a été utilisée comme outil d'assistance et de réflexion, et non comme substitut à l'analyse pédagogique.
+Generative artificial intelligence was used as a **support and reflection tool**, rather than as a substitute for pedagogical analysis.
 
-Elle a notamment contribué à :
+It contributed in particular to:
 
-- explorer et clarifier la structure TEI/XML ;
-- proposer des pistes de catégorisation des erreurs ;
-- vérifier la cohérence du balisage et des références ;
-- accélérer certaines tâches répétitives de relecture et de structuration.
+* exploring and clarifying the TEI/XML structure;
+* suggesting possible approaches to error categorization;
+* checking the consistency of encoding and references;
+* accelerating some repetitive proofreading and structuring tasks.
 
-Les choix d'encodage, l'interprétation des productions d'apprenants et la validation finale des catégories restent sous contrôle humain.
+Encoding decisions, the interpretation of learner productions and the final validation of error categories remain under **human control**.
 
-Cette démarche permet d'explorer une utilisation de l'IA dans un processus de learning design augmenté, où l'automatisation de certaines tâches libère du temps pour l'analyse pédagogique et la prise de décision.
+This approach explores the use of AI within an **AI-augmented learning design process**, where the automation of certain tasks can free up time for pedagogical analysis and decision-making.
 
-### Encodage
+### Encoding
 
-Chaque texte est encodé en XML/TEI. Le texte "de surface" reste lisible
-normalement ; chaque erreur repérée est marquée avec l'élément
-`<choice>`, qui met en regard :
+Each text is encoded in XML/TEI. The "surface" text remains normally readable; each identified error is marked using the `<choice>` element, which brings together:
 
-- `<sic>` — ce que l'apprenant a réellement écrit,
-- `<corr type="...">` — la forme correcte, avec un attribut `type`
-  indiquant la catégorie d'erreur.
+* `<sic>` — what the learner actually wrote;
+* `<corr type="...">` — the corrected form, with a `type` attribute indicating the error category.
 
 ```xml
 <choice>
@@ -80,51 +55,39 @@ normalement ; chaque erreur repérée est marquée avec l'élément
 </choice>
 ```
 
-### Typologie d'erreurs
+### Error Taxonomy
 
-Une liste fermée de catégories a été définie à partir de la lecture des
-deux textes, puis déclarée formellement dans l'en-tête TEI
-(`<encodingDesc><taxonomy>`) pour garantir que chaque erreur soit
-étiquetée de façon cohérente d'un texte à l'autre :
+A closed list of categories was defined based on the analysis of the two texts, then formally declared in the TEI header (`<encodingDesc><taxonomy>`) to ensure that each error is labelled consistently across texts:
 
-- `accord-genre`
-- `accord-nombre`
-- `accord-sujet-verbe`
-- `fusion-prepositionnelle`
-- `ordre-des-mots`
-- `structure-verbale`
-- `interference-orthographique`
+* `accord-genre`
+* `accord-nombre`
+* `accord-sujet-verbe`
+* `fusion-prepositionnelle`
+* `ordre-des-mots`
+* `structure-verbale`
+* `interference-orthographique`
 
-Cette typologie n'est pas figée : elle pourra évoluer si de nouveaux
-textes font apparaître des erreurs qui ne rentrent dans aucune catégorie
-existante.
+This taxonomy is not fixed: it may evolve if new texts reveal errors that do not fit into any of the existing categories.
 
-### Modules TEI mobilisés
+### TEI Modules Used
 
-- Core
-- Header
-- Default Text Structure
-- Names, Dates, People, and Places (pour l'anonymisation des
-  apprenants et les métadonnées de profil)
-- Simple Analytic Mechanisms (pour le système `<choice>`/`<sic>`/`<corr>`)
+* Core
+* Header
+* Default Text Structure
+* Names, Dates, People, and Places (for learner anonymization and profile metadata)
+* Simple Analytic Mechanisms (for the `<choice>`/`<sic>`/`<corr>` system)
 
-## Ce qui a déjà été fait
+## What Has Already Been Done
 
-- structure du dépôt mise en place (`README.md`, `tei_corpus.xml`,
-  `stile.css`, dossiers `sources/`, `assets/`, `analysis/`)
-- les deux textes authentiques transcrits et encodés en TEI avec la
-  typologie d'erreurs
-- anonymisation des apprenants
+* repository structure established (`README.md`, `tei_corpus.xml`, `stile.css`, `sources/`, `assets/`, `analysis/` directories);
+* the two authentic texts transcribed and encoded in TEI using the error taxonomy;
+* learners anonymized.
 
-## Ce qu'il reste à faire
+## What Remains to Be Done
 
-1. relecture ligne par ligne du balisage pour valider ou ajuster les
-   catégories d'erreurs attribuées
-2. rédaction de la feuille `style.xsl` pour transformer le XML en page
-   HTML consultable
-3. écriture du script Python d'analyse quantitative (comptage des
-   erreurs par type, par texte, tableau récapitulatif)
-4. conception du script pour qu'il se mette à jour automatiquement à
-   chaque nouveau texte ajouté au corpus
-5. décision sur la publication (dépôt public sur GitHub, intégration au
-   portfolio Notion)
+1. Review the encoding line by line to validate or adjust the assigned error categories.
+2. Write the `style.xsl` stylesheet to transform the XML into a browsable HTML page.
+3. Develop the Python script for quantitative analysis (counting errors by type and by text, with a summary table).
+4. Design the script so that it updates automatically whenever a new text is added to the corpus.
+5. Decide how the project will be published (public GitHub repository, integration into the Notion portfolio).
+
