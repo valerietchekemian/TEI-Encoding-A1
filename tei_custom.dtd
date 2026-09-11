@@ -1,0 +1,64 @@
+<!--
+  tei_custom.dtd
+
+  DTD allégée et documentaire pour le corpus TEI d'apprenants A1.
+  Ne remplace pas le schéma TEI complet (TEI-All) : elle documente
+  uniquement le sous-ensemble d'éléments et d'attributs réellement
+  utilisés dans tei_corpus.xml, pour faciliter la relecture et la
+  validation rapide de nouveaux textes ajoutés au corpus.
+
+  Usage (optionnel) :
+    <!DOCTYPE TEI SYSTEM "tei_custom.dtd">
+-->
+
+<!-- Éléments structurants -->
+<!ELEMENT TEI (teiHeader, text)>
+<!ELEMENT teiHeader (fileDesc, encodingDesc?, profileDesc?)>
+<!ELEMENT text (body)>
+<!ELEMENT body (div+)>
+
+<!-- Un texte d'apprenant -->
+<!ELEMENT div (measure?, note?, p+, signed?, postscript?)>
+<!ATTLIST div
+  xml:id ID #REQUIRED
+  type   CDATA #FIXED "production-ecrite"
+  who    CDATA #REQUIRED
+>
+
+<!ELEMENT measure EMPTY>
+<!ATTLIST measure
+  unit     CDATA #FIXED "mots"
+  quantity CDATA #REQUIRED
+>
+
+<!-- Grille de conformité à la consigne -->
+<!ELEMENT note (list)>
+<!ATTLIST note type CDATA #FIXED "conformite-consigne">
+<!ELEMENT list (item+)>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST item corresp IDREF #REQUIRED>
+
+<!-- Paragraphe : texte libre + erreurs encodées -->
+<!ELEMENT p (#PCDATA | choice)*>
+
+<!-- Une erreur et sa correction -->
+<!ELEMENT choice (sic, corr)>
+<!ELEMENT sic  (#PCDATA)>
+<!ELEMENT corr (#PCDATA)>
+<!ATTLIST corr type (
+    accord-genre
+  | accord-nombre
+  | accord-sujet-verbe
+  | fusion-prepositionnelle
+  | ordre-des-mots
+  | structure-verbale
+  | interference-orthographique
+) #REQUIRED>
+
+<!ELEMENT signed (#PCDATA)>
+<!ELEMENT postscript (#PCDATA)>
+
+<!-- Éléments du teiHeader (résumés, non détaillés ici) -->
+<!ELEMENT fileDesc ANY>
+<!ELEMENT encodingDesc ANY>
+<!ELEMENT profileDesc ANY>
