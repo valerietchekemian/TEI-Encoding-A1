@@ -85,8 +85,8 @@
 
 <xsl:template match="tei:choice">
   <span class="choice">
-    <span class="sic"><xsl:value-of select="tei:sic"/></span>
-    <span class="corr">
+    <span class="erreur"><xsl:value-of select="tei:sic"/></span>
+    <span class="correction">
       <xsl:attribute name="data-type"><xsl:value-of select="tei:corr/@type"/></xsl:attribute>
       <xsl:value-of select="tei:corr"/>
     </span>

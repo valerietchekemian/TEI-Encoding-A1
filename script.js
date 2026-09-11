@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Au clic sur une correction, afficher sa catégorie d'erreur
-  const corrections = document.querySelectorAll(".corr");
+  const corrections = document.querySelectorAll(".correction");
   corrections.forEach(function (el) {
     el.addEventListener("click", function () {
       const type = el.getAttribute("data-type");
