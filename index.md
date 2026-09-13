@@ -39,3 +39,11 @@ In this project, learners' real names were removed and replaced with anonymous i
 This anonymization, however, was designed for a small-scale, exploratory, educational use. Scaling this up — more texts, use within a company or a formal examination context — would require going further: explicit consent from learners or their legal guardians, a clear legal basis for data processing (GDPR, if the corpus is compiled in Europe), a defined retention period, and likely third-party-validated anonymization rather than self-assessed. Handling human writing, even for linguistic analysis purposes, is never neutral — it is personal data before it is research data.
 
 ## Explore the Corpus
+
+Portfolio — TEI Encoding of A1 Written Productions
+Annotated Corpus (interactive view)
+Quantitative Analysis Report
+Source Code on GitHub
+Also available in French / Italian on request.
+
+Project in progress — last updated: 2026
