@@ -58,7 +58,6 @@ body {
   background: linear-gradient(180deg, var(--fond-1) 0%, var(--fond-2) 100%);
   color: var(--encre);
   padding: 0;
-  overflow: hidden;
 }
 
 img,
@@ -239,7 +238,7 @@ p {
   flex: 1;
   min-height: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #page-frame {
@@ -248,6 +247,7 @@ p {
   height: 100%;
   border: 0;
   background: transparent;
+  overflow: auto;
 }
 
 .page-footer {

@@ -22,12 +22,16 @@
 ### 5. CSS e comportamento (`stile.css` e `script.js`)
 - Aggiornato il CSS per supportare un layout “shell + contenuto interno” più professionale e moderno.
 - Aggiunta la gestione della sidebar richiudibile sia su desktop sia su mobile, con comportamento coerente e standard nelle interfacce moderne.
-- Corretto il problema di chiusura del menu latérale senza compromettere la stabilità del footer e del contenuto interno.
+- Corretto il problema di chiusura del menu laterale senza compromettere la stabilità del footer e del contenuto interno.
+- Risolto il blocco dello scrolling delle pagine interne, che ora possono essere sfogliate correttamente attraverso la shell esterna.
+- Aggiunto spazio laterale nei contenuti interni per migliorare il respiro visivo e la leggibilità.
+- Verificato il comportamento del layout in modo da evitare che il contenuto venga nascosto o non raggiungibile durante lo scroll.
 - Mantenute le variabili CSS e i commenti precedenti, adattandoli al nuovo modello di UI/UX.
 
 ### 6. Footer e accessibilità
 - Spostato il link a GitHub nel footer, sopra copyright e data, secondo il feedback richiesto.
 - Rimossa la sezione dedicata ai link alle pagine interne dalla home, dato che il menu laterale già li espone in modo più coerente.
+- Aggiornato il formato della data di ultima modifica in stile francese (`13/09/2026`) e mantenuto il testo solo nel layout esterno, non nelle pagine interne.
 
 ## File aggiunti
 
