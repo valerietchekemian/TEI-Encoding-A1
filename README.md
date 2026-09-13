@@ -51,6 +51,6 @@ indicating the error category:
 
 - 🌐 **Live:** https://valerietchekemian.github.io/TEI-Encoding-A1/
 - 📊 **2/2 documents** encoded and validated
-- 🏷️ **47 errors** identified across 8 categories
+- 🏷️ **14 errors** identified across 6 categories
 - ✅ **TEI P5 compliant** | Last validated: Sept 2024
 - 🚀 **Next:** Python analysis script for error distribution
