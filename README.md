@@ -49,4 +49,4 @@ indicating the error category:
 
 ## Status
 
-🚧 Work in progress — corpus texts not yet added.
+ https://valerietchekemian.github.io/TEI-Encoding-A1/
