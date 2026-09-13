@@ -41,6 +41,8 @@ Encoding decisions, the interpretation of learner productions and the final vali
 
 This approach explores the use of AI within an **AI-augmented learning design process**, where the automation of certain tasks can free up time for pedagogical analysis and decision-making.
 
+page : https://valerietchekemian.github.io/TEI-Encoding-A1/
+
 ### Encoding
 
 Each text is encoded in XML/TEI. The "surface" text remains normally readable; each identified error is marked using the `<choice>` element, which brings together:
