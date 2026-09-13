@@ -1,40 +1,48 @@
 # Riepilogo delle modifiche di questo branch
 
-## Cambiamenti effettuati dal ramo `feature/fa/UI`
+## Cambiamenti principali
 
-### 1. `index.html`
-- Aggiornato il titolo della finestra per una presentazione più professionale.
-- Aggiunta una navigazione laterale riequilibrata con una topbar dedicata.
-- Inseriti footer con copyright e ultima modifica.
-- Organizzato il contenuto in una struttura più moderna e centrata, con migliore fruibilità su mobile.
+### 1. Nuovo layout esterno (`index.html`)
+- Creato un nuovo `index.html` come shell esterna unica, con sidebar fissa, topbar e footer sempre visibili.
+- Le pagine interne vengono caricate all'interno di un frame dedicato, in modo che il menu e il footer restino stabili mentre il contenuto scorre.
+- La navigazione laterale è ora chiudibile su mobile e funziona correttamente come UI moderna.
 
-### 2. `tei_corpus.html`
-- Aggiornato il titolo della finestra per una presentazione più professionale.
-- Aggiunta la stessa navigazione laterale e la topbar delle altre pagine.
-- Inseriti footer con copyright e ultima modifica.
-- Mantenuta la funzionalità esistente di toggle delle correzioni e l’interazione con le anomalie.
+### 2. Nuova pagina di accoglienza (`accueil.html`)
+- L'attuale pagina iniziale è stata trasformata in una pagina interna dedicata all'accueil.
+- Il contenuto di progetto, considerazioni e link principali è stato mantenuto, senza perdere i commenti e le sezioni già presenti.
 
-### 3. `analysis/rapport_analyse.html`
-- Aggiunta la navigazione laterale e la topbar per uniformare il layout alle altre pagine.
-- Inseriti footer con copyright e ultima modifica.
-- Mantenuta la struttura e la logica del report di analisi, inclusi i grafici e le tabelle.
+### 3. Pagina corpus (`tei_corpus.html`)
+- La pagina del corpus è stata adattata per essere visualizzata come contenuto interno all'interno del nuovo shell esterno.
+- La funzionalità di toggle delle correzioni è stata preservata e resa coerente con il nuovo layout.
 
-### 4. `stile.css`
-- Implementato un layout a shell con sidebar, topbar, contenuto centrale e footer.
-- Aggiunte regole responsive per rendere il menu laterale chiudibile e nascosto di default su mobile.
-- Consolidato l’uso delle variabili CSS per facilitare manutenzione e modifica futura.
-- Migliorata la leggibilità e la coerenza visiva delle pagine senza alterare le funzionalità esistenti.
+### 4. Pagina analisi (`analysis/rapport_analyse.html`)
+- La pagina di analisi è stata adattata al nuovo shell esterno, mantenendo grafici, tabelle e logica di analisi originale.
+- È stata rivista per evitare conflitti con il layout condiviso e per restare coerente con l'interfaccia moderna.
 
-### 5. `script.js`
-- Aggiunta la logica di apertura/chiusura del menu laterale su mobile.
-- Preservata la logica di toggle delle correzioni già presente nel corpus.
+### 5. CSS e comportamento (`stile.css` e `script.js`)
+- Aggiornato il CSS per supportare un layout “shell + contenuto interno” più professionale e moderno.
+- Aggiunta la gestione della sidebar richiudibile sia su desktop sia su mobile, con comportamento coerente e standard nelle interfacce moderne.
+- Corretto il problema di chiusura del menu latérale senza compromettere la stabilità del footer e del contenuto interno.
+- Mantenute le variabili CSS e i commenti precedenti, adattandoli al nuovo modello di UI/UX.
+
+### 6. Footer e accessibilità
+- Spostato il link a GitHub nel footer, sopra copyright e data, secondo il feedback richiesto.
+- Rimossa la sezione dedicata ai link alle pagine interne dalla home, dato che il menu laterale già li espone in modo più coerente.
 
 ## File aggiunti
 
-### 6. `RIEPILOGO_MODIFICHE_UI.md`
-- Creato per riportare in modo sintetico le modifiche introdotte da questo branch.
+- `accueil.html`
+- `RIEPILOGO_MODIFICHE_UI.md`
+
+## File modificati
+
+- `index.html`
+- `tei_corpus.html`
+- `analysis/rapport_analyse.html`
+- `stile.css`
+- `script.js`
 
 ## File non modificati in questo branch
 
-- Nessun file del contenuto scientifico o dei dati del corpus è stato modificato.
-- Nessuna funzionalità di analisi TEI o XML è stata alterata.
+- Nessun file relativo al contenuto scientifico, ai corpus XML/TEI o alla logica di analisi è stato alterato.
+- Nessuna funzionalità di elaborazione TEI o di visualizzazione dei dati è stata persa.

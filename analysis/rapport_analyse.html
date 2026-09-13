@@ -160,308 +160,261 @@
 </style>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar" aria-label="Navigation principale">
-      <div class="sidebar-header">
-        <div class="brand">
-          <span class="brand-mark">TEI</span>
-          <div class="brand-copy">
-            <span class="brand-name">Portfolio A1</span>
-            <small>Corpus &amp; analyse</small>
-          </div>
+  <main class="page-content">
+    <header class="analysis-header">
+      <h1>Rapport d'Analyse</h1>
+      <p>Corpus de productions écrites A1 — Analyse automatique</p>
+    </header>
+
+    <section>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>14</h3>
+          <p>Erreurs totales</p>
         </div>
-        <button class="sidebar-close" id="sidebar-close" aria-label="Fermer le menu">✕</button>
+        <div class="stat-card">
+          <h3>6</h3>
+          <p>Catégories d'erreurs</p>
+        </div>
+        <div class="stat-card">
+          <h3>2</h3>
+          <p>Textes analysés</p>
+        </div>
+        <div class="stat-card">
+          <h3>2</h3>
+          <p>Apprenants</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>1. Résumé par catégorie d'erreur</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Catégorie</th>
+              <th>Description</th>
+              <th style="text-align: center;">Occurrences</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="categorie-code">interference-orthographique</span></td>
+              <td>Orthographe influencée par la langue source (espagnol)</td>
+              <td style="text-align: center;"><span class="occurrences-badge">5</span></td>
+            </tr>
+            <tr>
+              <td><span class="categorie-code">structure-verbale</span></td>
+              <td>Construction verbale calquée sur la langue source</td>
+              <td style="text-align: center;"><span class="occurrences-badge">3</span></td>
+            </tr>
+            <tr>
+              <td><span class="categorie-code">accord-genre</span></td>
+              <td>Erreur d'accord en genre</td>
+              <td style="text-align: center;"><span class="occurrences-badge">2</span></td>
+            </tr>
+            <tr>
+              <td><span class="categorie-code">fusion-prepositionnelle</span></td>
+              <td>Fusion préposition + article non réalisée (à + les → aux)</td>
+              <td style="text-align: center;"><span class="occurrences-badge">2</span></td>
+            </tr>
+            <tr>
+              <td><span class="categorie-code">accord-sujet-verbe</span></td>
+              <td>Erreur d'accord sujet-verbe</td>
+              <td style="text-align: center;"><span class="occurrences-badge">1</span></td>
+            </tr>
+            <tr>
+              <td><span class="categorie-code">ordre-des-mots</span></td>
+              <td>Ordre des mots incorrect</td>
+              <td style="text-align: center;"><span class="occurrences-badge">1</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <nav class="sidebar-nav">
-        <a class="nav-link" href="../index.html">Accueil</a>
-        <a class="nav-link" href="../tei_corpus.html">Corpus</a>
-        <a class="nav-link active" href="rapport_analyse.html">Analyse</a>
-      </nav>
-    </aside>
+      <div class="chart-container">
+        <canvas id="errorChart" style="max-height: 400px;"></canvas>
+      </div>
+    </section>
 
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <section>
+      <h2>2. Détail des erreurs et corrections</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Texte</th>
+              <th>Apprenant</th>
+              <th>Catégorie</th>
+              <th>Erreur (sic)</th>
+              <th>Correction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Texte 1</td>
+              <td>apprenant1</td>
+              <td><span class="categorie-code">accord-sujet-verbe</span></td>
+              <td><span class="erreur-cell">va</span></td>
+              <td><span class="correction-cell">vas</span></td>
+            </tr>
+            <tr>
+              <td>Texte 1</td>
+              <td>apprenant1</td>
+              <td><span class="categorie-code">ordre-des-mots</span></td>
+              <td><span class="erreur-cell">Je voudrai inviter vous</span></td>
+              <td><span class="correction-cell">Je voudrais vous inviter</span></td>
+            </tr>
+            <tr>
+              <td>Texte 1</td>
+              <td>apprenant1</td>
+              <td><span class="categorie-code">interference-orthographique</span></td>
+              <td><span class="erreur-cell">plagés bels</span></td>
+              <td><span class="correction-cell">plages belles</span></td>
+            </tr>
+            <tr>
+              <td>Texte 1</td>
+              <td>apprenant1</td>
+              <td><span class="categorie-code">structure-verbale</span></td>
+              <td><span class="erreur-cell">Je propose tu la date</span></td>
+              <td><span class="correction-cell">Je te propose la date</span></td>
+            </tr>
+            <tr>
+              <td>Texte 1</td>
+              <td>apprenant1</td>
+              <td><span class="categorie-code">interference-orthographique</span></td>
+              <td><span class="erreur-cell">de avril à may</span></td>
+              <td><span class="correction-cell">d'avril à mai</span></td>
+            </tr>
+            <tr>
+              <td>Texte 1</td>
+              <td>apprenant1</td>
+              <td><span class="categorie-code">structure-verbale</span></td>
+              <td><span class="erreur-cell">pour tu venir</span></td>
+              <td><span class="correction-cell">pour que tu viennes</span></td>
+            </tr>
+            <tr>
+              <td>Texte 1</td>
+              <td>apprenant1</td>
+              <td><span class="categorie-code">accord-genre</span></td>
+              <td><span class="erreur-cell">a bon vacances</span></td>
+              <td><span class="correction-cell">de bonnes vacances</span></td>
+            </tr>
+            <tr>
+              <td>Texte 1</td>
+              <td>apprenant1</td>
+              <td><span class="categorie-code">structure-verbale</span></td>
+              <td><span class="erreur-cell">écrite a mèl</span></td>
+              <td><span class="correction-cell">écris un mail</span></td>
+            </tr>
+            <tr>
+              <td>Texte 2</td>
+              <td>apprenant2</td>
+              <td><span class="categorie-code">fusion-prepositionnelle</span></td>
+              <td><span class="erreur-cell">à les boîtes</span></td>
+              <td><span class="correction-cell">aux boîtes</span></td>
+            </tr>
+            <tr>
+              <td>Texte 2</td>
+              <td>apprenant2</td>
+              <td><span class="categorie-code">fusion-prepositionnelle</span></td>
+              <td><span class="erreur-cell">à les rues comerçantes</span></td>
+              <td><span class="correction-cell">aux rues commerçantes</span></td>
+            </tr>
+            <tr>
+              <td>Texte 2</td>
+              <td>apprenant2</td>
+              <td><span class="categorie-code">interference-orthographique</span></td>
+              <td><span class="erreur-cell">historyques</span></td>
+              <td><span class="correction-cell">historiques</span></td>
+            </tr>
+            <tr>
+              <td>Texte 2</td>
+              <td>apprenant2</td>
+              <td><span class="categorie-code">accord-genre</span></td>
+              <td><span class="erreur-cell">le temperature</span></td>
+              <td><span class="correction-cell">la température</span></td>
+            </tr>
+            <tr>
+              <td>Texte 2</td>
+              <td>apprenant2</td>
+              <td><span class="categorie-code">interference-orthographique</span></td>
+              <td><span class="erreur-cell">ideale</span></td>
+              <td><span class="correction-cell">idéale</span></td>
+            </tr>
+            <tr>
+              <td>Texte 2</td>
+              <td>apprenant2</td>
+              <td><span class="categorie-code">interference-orthographique</span></td>
+              <td><span class="erreur-cell">sympathyques</span></td>
+              <td><span class="correction-cell">sympathiques</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-    <div class="main-panel">
-      <header class="topbar">
-        <button class="sidebar-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Ouvrir le menu">☰</button>
-        <div class="topbar-title">
-          <span class="topbar-kicker">Rapport d'analyse</span>
-          <h1>Corpus A1</h1>
-        </div>
-      </header>
-
-      <main class="page-content">
-        <header class="analysis-header">
-          <h1>Rapport d'Analyse</h1>
-          <p>Corpus de productions écrites A1 — Analyse automatique</p>
-        </header>
-
-<!-- Statistiques générales -->
-<section>
-  <div class="stats-grid">
-    <div class="stat-card">
-      <h3>14</h3>
-      <p>Erreurs totales</p>
-    </div>
-    <div class="stat-card">
-      <h3>6</h3>
-      <p>Catégories d'erreurs</p>
-    </div>
-    <div class="stat-card">
-      <h3>2</h3>
-      <p>Textes analysés</p>
-    </div>
-    <div class="stat-card">
-      <h3>2</h3>
-      <p>Apprenants</p>
-    </div>
-  </div>
-</section>
-
-<!-- Section 1 : Résumé par catégorie -->
-<section>
-  <h2>1. Résumé par catégorie d'erreur</h2>
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Catégorie</th>
-          <th>Description</th>
-          <th style="text-align: center;">Occurrences</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="categorie-code">interference-orthographique</span></td>
-          <td>Orthographe influencée par la langue source (espagnol)</td>
-          <td style="text-align: center;"><span class="occurrences-badge">5</span></td>
-        </tr>
-        <tr>
-          <td><span class="categorie-code">structure-verbale</span></td>
-          <td>Construction verbale calquée sur la langue source</td>
-          <td style="text-align: center;"><span class="occurrences-badge">3</span></td>
-        </tr>
-        <tr>
-          <td><span class="categorie-code">accord-genre</span></td>
-          <td>Erreur d'accord en genre</td>
-          <td style="text-align: center;"><span class="occurrences-badge">2</span></td>
-        </tr>
-        <tr>
-          <td><span class="categorie-code">fusion-prepositionnelle</span></td>
-          <td>Fusion préposition + article non réalisée (à + les → aux)</td>
-          <td style="text-align: center;"><span class="occurrences-badge">2</span></td>
-        </tr>
-        <tr>
-          <td><span class="categorie-code">accord-sujet-verbe</span></td>
-          <td>Erreur d'accord sujet-verbe</td>
-          <td style="text-align: center;"><span class="occurrences-badge">1</span></td>
-        </tr>
-        <tr>
-          <td><span class="categorie-code">ordre-des-mots</span></td>
-          <td>Ordre des mots incorrect</td>
-          <td style="text-align: center;"><span class="occurrences-badge">1</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Graphique -->
-  <div class="chart-container">
-    <canvas id="errorChart" style="max-height: 400px;"></canvas>
-  </div>
-</section>
-
-<!-- Section 2 : Détail des erreurs -->
-<section>
-  <h2>2. Détail des erreurs et corrections</h2>
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Texte</th>
-          <th>Apprenant</th>
-          <th>Catégorie</th>
-          <th>Erreur (sic)</th>
-          <th>Correction</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Texte 1</td>
-          <td>apprenant1</td>
-          <td><span class="categorie-code">accord-sujet-verbe</span></td>
-          <td><span class="erreur-cell">va</span></td>
-          <td><span class="correction-cell">vas</span></td>
-        </tr>
-        <tr>
-          <td>Texte 1</td>
-          <td>apprenant1</td>
-          <td><span class="categorie-code">ordre-des-mots</span></td>
-          <td><span class="erreur-cell">Je voudrai inviter vous</span></td>
-          <td><span class="correction-cell">Je voudrais vous inviter</span></td>
-        </tr>
-        <tr>
-          <td>Texte 1</td>
-          <td>apprenant1</td>
-          <td><span class="categorie-code">interference-orthographique</span></td>
-          <td><span class="erreur-cell">plagés bels</span></td>
-          <td><span class="correction-cell">plages belles</span></td>
-        </tr>
-        <tr>
-          <td>Texte 1</td>
-          <td>apprenant1</td>
-          <td><span class="categorie-code">structure-verbale</span></td>
-          <td><span class="erreur-cell">Je propose tu la date</span></td>
-          <td><span class="correction-cell">Je te propose la date</span></td>
-        </tr>
-        <tr>
-          <td>Texte 1</td>
-          <td>apprenant1</td>
-          <td><span class="categorie-code">interference-orthographique</span></td>
-          <td><span class="erreur-cell">de avril à may</span></td>
-          <td><span class="correction-cell">d'avril à mai</span></td>
-        </tr>
-        <tr>
-          <td>Texte 1</td>
-          <td>apprenant1</td>
-          <td><span class="categorie-code">structure-verbale</span></td>
-          <td><span class="erreur-cell">pour tu venir</span></td>
-          <td><span class="correction-cell">pour que tu viennes</span></td>
-        </tr>
-        <tr>
-          <td>Texte 1</td>
-          <td>apprenant1</td>
-          <td><span class="categorie-code">accord-genre</span></td>
-          <td><span class="erreur-cell">a bon vacances</span></td>
-          <td><span class="correction-cell">de bonnes vacances</span></td>
-        </tr>
-        <tr>
-          <td>Texte 1</td>
-          <td>apprenant1</td>
-          <td><span class="categorie-code">structure-verbale</span></td>
-          <td><span class="erreur-cell">écrite a mèl</span></td>
-          <td><span class="correction-cell">écris un mail</span></td>
-        </tr>
-        <tr>
-          <td>Texte 2</td>
-          <td>apprenant2</td>
-          <td><span class="categorie-code">fusion-prepositionnelle</span></td>
-          <td><span class="erreur-cell">à les boîtes</span></td>
-          <td><span class="correction-cell">aux boîtes</span></td>
-        </tr>
-        <tr>
-          <td>Texte 2</td>
-          <td>apprenant2</td>
-          <td><span class="categorie-code">fusion-prepositionnelle</span></td>
-          <td><span class="erreur-cell">à les rues comerçantes</span></td>
-          <td><span class="correction-cell">aux rues commerçantes</span></td>
-        </tr>
-        <tr>
-          <td>Texte 2</td>
-          <td>apprenant2</td>
-          <td><span class="categorie-code">interference-orthographique</span></td>
-          <td><span class="erreur-cell">historyques</span></td>
-          <td><span class="correction-cell">historiques</span></td>
-        </tr>
-        <tr>
-          <td>Texte 2</td>
-          <td>apprenant2</td>
-          <td><span class="categorie-code">accord-genre</span></td>
-          <td><span class="erreur-cell">le temperature</span></td>
-          <td><span class="correction-cell">la température</span></td>
-        </tr>
-        <tr>
-          <td>Texte 2</td>
-          <td>apprenant2</td>
-          <td><span class="categorie-code">interference-orthographique</span></td>
-          <td><span class="erreur-cell">ideale</span></td>
-          <td><span class="correction-cell">idéale</span></td>
-        </tr>
-        <tr>
-          <td>Texte 2</td>
-          <td>apprenant2</td>
-          <td><span class="categorie-code">interference-orthographique</span></td>
-          <td><span class="erreur-cell">sympathyques</span></td>
-          <td><span class="correction-cell">sympathiques</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const ctx = document.getElementById('errorChart').getContext('2d');
-  const errorChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: [
-        'Interférence orthographique',
-        'Structure verbale',
-        'Accord en genre',
-        'Fusion préposition',
-        'Accord sujet-verbe',
-        'Ordre des mots'
-      ],
-      datasets: [{
-        data: [5, 3, 2, 2, 1, 1],
-        backgroundColor: [
-          '#F2E1A0',
-          '#A7C7E7',
-          '#F3C9C0',
-          '#B9DCF0',
-          '#A9DECB',
-          '#E8B4E8'
-        ],
-        borderColor: '#FAFAF8',
-        borderWidth: 3
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            font: {
-              family: "'Inter', sans-serif",
-              size: 14
-            },
-            color: '#2E3A4F',
-            padding: 15
-          }
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('errorChart')?.getContext('2d');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: [
+            'Interférence orthographique',
+            'Structure verbale',
+            'Accord en genre',
+            'Fusion préposition',
+            'Accord sujet-verbe',
+            'Ordre des mots'
+          ],
+          datasets: [{
+            data: [5, 3, 2, 2, 1, 1],
+            backgroundColor: [
+              '#F2E1A0',
+              '#A7C7E7',
+              '#F3C9C0',
+              '#B9DCF0',
+              '#A9DECB',
+              '#E8B4E8'
+            ],
+            borderColor: '#FAFAF8',
+            borderWidth: 3
+          }]
         },
-        tooltip: {
-          backgroundColor: 'rgba(46, 58, 79, 0.9)',
-          padding: 12,
-          titleFont: {
-            size: 14
-          },
-          bodyFont: {
-            size: 13
-          },
-          callbacks: {
-            label: function(context) {
-              return context.label + ': ' + context.parsed + ' erreur' + (context.parsed > 1 ? 's' : '');
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                font: {
+                  family: "'Inter', sans-serif",
+                  size: 14
+                },
+                color: '#2E3A4F',
+                padding: 15
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(46, 58, 79, 0.9)',
+              padding: 12,
+              titleFont: { size: 14 },
+              bodyFont: { size: 13 },
+              callbacks: {
+                label: function(context) {
+                  return context.label + ': ' + context.parsed + ' erreur' + (context.parsed > 1 ? 's' : '');
+                }
+              }
             }
           }
         }
-      }
+      });
     }
-  });
-</script>
-
-      </main>
-
-      <footer class="page-footer">
-        <p>© 2026 Valérie Tchekemian</p>
-        <p>Dernière modification : 2026-09-13</p>
-      </footer>
-    </div>
-  </div>
-
-  <script src="../script.js"></script>
+  </script>
 </body>
 </html>

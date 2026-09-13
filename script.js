@@ -26,37 +26,62 @@ document.addEventListener("DOMContentLoaded", function () {
       return window.matchMedia("(min-width: 768px)").matches;
     };
 
-    const applySidebarState = function (isOpen) {
+    const applyMobileSidebarState = function (isOpen) {
       sidebar.classList.toggle("is-open", isOpen);
       body.classList.toggle("sidebar-open", isOpen);
       sidebarToggleButton.setAttribute("aria-expanded", String(isOpen));
     };
 
+    const applyDesktopSidebarState = function (isCollapsed) {
+      sidebar.classList.toggle("is-collapsed", isCollapsed);
+      sidebarToggleButton.setAttribute("aria-expanded", String(!isCollapsed));
+    };
+
+    const syncSidebarState = function () {
+      if (isDesktop()) {
+        sidebar.classList.remove("is-open");
+        body.classList.remove("sidebar-open");
+        sidebarToggleButton.setAttribute("aria-expanded", String(!sidebar.classList.contains("is-collapsed")));
+      } else {
+        sidebar.classList.remove("is-collapsed");
+        body.classList.toggle("sidebar-open", sidebar.classList.contains("is-open"));
+        sidebarToggleButton.setAttribute("aria-expanded", String(sidebar.classList.contains("is-open")));
+      }
+    };
+
     sidebarToggleButton.addEventListener("click", function () {
-      const shouldOpen = !sidebar.classList.contains("is-open");
-      applySidebarState(shouldOpen);
+      if (isDesktop()) {
+        const isCollapsed = sidebar.classList.contains("is-collapsed");
+        applyDesktopSidebarState(!isCollapsed);
+      } else {
+        applyMobileSidebarState(!sidebar.classList.contains("is-open"));
+      }
     });
 
     if (sidebarCloseButton) {
       sidebarCloseButton.addEventListener("click", function () {
-        applySidebarState(false);
+        if (isDesktop()) {
+          applyDesktopSidebarState(true);
+        } else {
+          applyMobileSidebarState(false);
+        }
       });
     }
 
     if (sidebarOverlay) {
       sidebarOverlay.addEventListener("click", function () {
-        applySidebarState(false);
+        applyMobileSidebarState(false);
       });
     }
 
     window.addEventListener("resize", function () {
-      if (isDesktop()) {
-        applySidebarState(false);
-      }
+      syncSidebarState();
     });
 
-    if (!isDesktop()) {
-      applySidebarState(false);
+    if (isDesktop()) {
+      applyDesktopSidebarState(false);
+    } else {
+      applyMobileSidebarState(false);
     }
   }
 
