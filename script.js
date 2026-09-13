@@ -11,14 +11,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Par défaut : corrections visibles
   body.classList.add("corrections-visible");
+  if (toggleButton) {
+    toggleButton.textContent = "Masquer les corrections";
+  }
 
   if (toggleButton) {
     toggleButton.addEventListener("click", function () {
-      body.classList.toggle("corrections-visible");
-      const visible = body.classList.contains("corrections-visible");
-      toggleButton.textContent = visible
-        ? "Masquer les corrections"
-        : "Afficher les corrections";
+      const isVisible = body.classList.contains("corrections-visible");
+      
+      if (isVisible) {
+        // Masquer les corrections, afficher les erreurs
+        body.classList.remove("corrections-visible");
+        toggleButton.textContent = "Afficher les corrections";
+        
+        // Masquer tous les .correction et afficher tous les .erreur
+        document.querySelectorAll(".correction").forEach(el => {
+          el.style.display = "none";
+        });
+        document.querySelectorAll(".erreur").forEach(el => {
+          el.style.display = "inline";
+        });
+      } else {
+        // Afficher les corrections, masquer les erreurs
+        body.classList.add("corrections-visible");
+        toggleButton.textContent = "Masquer les corrections";
+        
+        // Afficher tous les .correction et masquer tous les .erreur
+        document.querySelectorAll(".correction").forEach(el => {
+          el.style.display = "inline";
+        });
+        document.querySelectorAll(".erreur").forEach(el => {
+          el.style.display = "none";
+        });
+      }
     });
   }
 
