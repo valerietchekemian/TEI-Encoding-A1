@@ -13,14 +13,14 @@
 <p>Unpublished. Work in progress. Learner names anonymised.</p>
 </publicationStmt>
 <sourceDesc>
-<p>Short written productions collected from A1-level (CECR) learners of French as a foreign language whose native language is Spanish (Venezuela). Learner names have been anonymised as Apprenant1 and Apprenant2.</p>
-<p>Task instructions given to learners (original, French): « Vous écrivez à un(e) ami(e) français(e). Vous l'invitez à passer des vacances dans votre pays. Vous lui proposez une date et vous parlez des activités que vous allez faire ensemble (40 mots min). »</p>
+<p>Short written productions collected from A1-level (CECR) learners of French as a foreign language whose native language is Spanish (Venezuela). Learner names have been anonymised as Apprenant1 [...]
+<p>Task instructions given to learners (original, French): « Vous écrivez à un(e) ami(e) français(e). Vous l'invitez à passer des vacances dans votre pays. Vous lui proposez une date et vous [...]
 </sourceDesc>
 </fileDesc>
 <encodingDesc>
 <!--  Closed error typology used throughout the corpus.
-           Add new <category> entries here if the typology evolves,
-           and reuse the same @xml:id values as @type on <corr>.  -->
+            Add new <category> entries here if the typology evolves,
+            and reuse the same @xml:id values as @type on <corr>.  -->
 <classDecl>
 <taxonomy xml:id="typologie-erreurs">
 <category xml:id="niveau-A1">
@@ -38,6 +38,9 @@
 <category xml:id="fusion-prepositionnelle">
 <catDesc>Fusion préposition + article non réalisée (à+le/les)</catDesc>
 </category>
+<category xml:id="ponctuation-preposition-omission">
+<catDesc>Erreur de ponctuation et omission de préposition</catDesc>
+</category>
 <category xml:id="ordre-des-mots">
 <catDesc>Ordre des mots incorrect</catDesc>
 </category>
@@ -49,8 +52,8 @@
 </category>
 </taxonomy>
 <!--  Critères de la consigne, vérifiés indépendamment des erreurs
-             de langue. Réutilisés comme @corresp dans les <item> de la
-             liste de conformité de chaque <div>.  -->
+              de langue. Réutilisés comme @corresp dans les <item> de la
+              liste de conformité de chaque <div>.  -->
 <taxonomy xml:id="criteres-consigne">
 <category xml:id="destinataire-ami">
 <catDesc>S'adresse à un(e) ami(e)</catDesc>
@@ -154,7 +157,12 @@ et passer
 </list>
 </note>
 <p>
-Chère amie, Je t'invite à passer des vacances d'été ici. Vénézuéla. Nous pouvons aller à la plage,
+Chère amie, Je t'invite à passer des vacances d'été
+<choice>
+<sic>ici. Vénézuéla</sic>
+<corr type="ponctuation-preposition-omission">ici, au Vénézuéla</corr>
+</choice>
+. Nous pouvons aller à la plage,
 <choice>
 <sic>à les boîtes</sic>
 <corr type="fusion-prepositionnelle">aux boîtes</corr>
