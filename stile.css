@@ -33,4 +33,47 @@ h1, h2, h3 {
   background: var(--menthe);
   padding: 1px 4px;
   border-radius: 4px;
+  display: inline;
+}
+
+/* Bouton toggle */
+#toggle-corrections {
+  background-color: var(--bleu-poudre);
+  color: var(--encre);
+  border: 2px solid var(--encre);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+#toggle-corrections:hover {
+  background-color: var(--bleu-ciel);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#toggle-corrections:active {
+  transform: translateY(0);
+}
+
+/* Par défaut : corrections visibles */
+body.corrections-visible .correction {
+  display: inline;
+}
+
+body.corrections-visible .erreur {
+  display: none;
+}
+
+/* Corrections masquées */
+body:not(.corrections-visible) .correction {
+  display: none;
+}
+
+body:not(.corrections-visible) .erreur {
+  display: inline;
 }
