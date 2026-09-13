@@ -3,81 +3,102 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Encodage TEI des productions écrites A1 — Portfolio</title>
+  <title>Portfolio TEI A1 — Accueil</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="stile.css"/>
 </head>
 <body>
 
-  <div class="page-shell">
-    <header class="site-header container py-4 py-md-5">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="header-card">
-            <p class="eyebrow mb-2">Portfolio pédagogique</p>
-            <h1>Encodage TEI des productions écrites A1</h1>
-            <p class="credit mb-0">Valérie Tchekemian</p>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation principale">
+      <div class="sidebar-header">
+        <div class="brand">
+          <span class="brand-mark">TEI</span>
+          <div class="brand-copy">
+            <span class="brand-name">Portfolio A1</span>
+            <small>Corpus &amp; analyse</small>
           </div>
         </div>
+        <button class="sidebar-close" id="sidebar-close" aria-label="Fermer le menu">✕</button>
       </div>
-    </header>
 
-    <main class="container pb-5">
-      <!-- ============================================================ -->
-      <!-- 1. Introduction / contexte du projet                          -->
-      <!-- ============================================================ -->
-      <section class="intro card border-0 shadow-sm mb-4">
-        <div class="card-body">
-          <h2>Le projet</h2>
-          <p>
-            Ce projet applique l'encodage TEI (Text Encoding Initiative) à deux courtes productions écrites au niveau A1 (CECR), recueillies dans le cadre d'un corpus d'apprenants de français langue étrangère (FLE). L'objectif est de rendre visible et quantifiable ce qu'un enseignant remarque intuitivement en corrigeant une copie. Une erreur cesse d'être une simple annotation en marge : elle devient une donnée classifiée, comparable d'un texte à l'autre et analysable pour identifier des motifs.
-          </p>
+      <nav class="sidebar-nav">
+        <a class="nav-link active" href="index.html">Accueil</a>
+        <a class="nav-link" href="tei_corpus.html">Corpus</a>
+        <a class="nav-link" href="analysis/rapport_analyse.html">Analyse</a>
+      </nav>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="main-panel">
+      <header class="topbar">
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Ouvrir le menu">☰</button>
+        <div class="topbar-title">
+          <span class="topbar-kicker">Portfolio pédagogique</span>
+          <h1>Encodage TEI A1</h1>
         </div>
-      </section>
+      </header>
 
-      <!-- ============================================================ -->
-      <!-- 2. Considérations : le TEI comme aide à l'évaluation           -->
-      <!-- ============================================================ -->
-      <section class="considerations card border-0 shadow-sm mb-4">
-        <div class="card-body">
-          <h2>Considérations sur cette forme d'aide à l'évaluation</h2>
-
-          <h3>Ce que ça apporte</h3>
-          <p>
-            Cela rend visible et quantifiable ce qu'un enseignant remarque souvent intuitivement en corrigeant une copie. Une erreur cesse d'être une simple annotation en marge : elle devient une donnée classifiée, comparable d'un texte à l'autre. La taxonomie des erreurs révèle des motifs : les interférences de la langue maternelle de l'apprenant, les calques syntaxiques, les lacunes récurrentes. Cette systématisation économise du temps lors du comptage et fournit un enregistrement traçable et exploitable à la fois pour la pratique pédagogique et pour la recherche.
-          </p>
-
-          <h3>Ce que ça ne remplace pas</h3>
-          <p>
-            Le jugement pédagogique de l'enseignant : la taxonomie des erreurs a été construite en lisant seulement deux textes, et elle est volontairement provisoire — elle devra être affinée avec un corpus plus important. L'outil signale des motifs ; il ne prescrit pas la remédiation. L'encodage n'automatise pas non plus la détection d'erreurs ; la classification reste un jugement humain, émis une fois puis enregistré. Avec seulement 14 erreurs réparties sur 2 textes, aucune prétention à la généralisation ne peut être formulée.
-          </p>
-
-          <h3>Ce que ça change dans la pratique</h3>
-          <p>
-            Cela déplace une partie du travail de correction en amont : au lieu de traiter chaque texte isolément, on peut interroger un ensemble de textes encodés pour éclairer la planification des cours — en ciblant une séance sur les types d'erreurs les plus fréquents, ou en concevant des exercices de grammaire autour des motifs observés. Avec un corpus plus large, le même schéma d'encodage pourrait suivre la progression dans le temps ou à travers une cohorte d'apprenants.
-          </p>
-        </div>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- 3. Accès au corpus et aux analyses                             -->
-      <!-- ============================================================ -->
-      <section class="liens card border-0 shadow-sm">
-        <div class="card-body">
-          <h2>Explorer le corpus</h2>
-          <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action" href="tei_corpus.html">Corpus annoté (vue interactive)</a>
-            <a class="list-group-item list-group-item-action" href="analysis/rapport_analyse.html">Rapport d'analyse quantitative</a>
-            <a class="list-group-item list-group-item-action" href="https://github.com/valerietchekemian/TEI-Encoding-A1">Code source sur GitHub</a>
+      <main class="page-content">
+        <!-- ============================================================ -->
+        <!-- 1. Introduction / contexte du projet                          -->
+        <!-- ============================================================ -->
+        <section class="intro card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <h2>Le projet</h2>
+            <p>
+              Ce projet applique l'encodage TEI (Text Encoding Initiative) à deux courtes productions écrites au niveau A1 (CECR), recueillies dans le cadre d'un corpus d'apprenants de français langue étrangère (FLE). L'objectif est de rendre visible et quantifiable ce qu'un enseignant remarque intuitivement en corrigeant une copie. Une erreur cesse d'être une simple annotation en marge : elle devient une donnée classifiée, comparable d'un texte à l'autre et analysable pour identifier des motifs.
+            </p>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
 
-    <footer class="site-footer py-4">
-      <p class="mb-0">Projet en cours — dernière mise à jour : 2026</p>
-    </footer>
+        <!-- ============================================================ -->
+        <!-- 2. Considérations : le TEI comme aide à l'évaluation           -->
+        <!-- ============================================================ -->
+        <section class="considerations card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <h2>Considérations sur cette forme d'aide à l'évaluation</h2>
+
+            <h3>Ce que ça apporte</h3>
+            <p>
+              Cela rend visible et quantifiable ce qu'un enseignant remarque souvent intuitivement en corrigeant une copie. Une erreur cesse d'être une simple annotation en marge : elle devient une donnée classifiée, comparable d'un texte à l'autre. La taxonomie des erreurs révèle des motifs : les interférences de la langue maternelle de l'apprenant, les calques syntaxiques, les lacunes récurrentes. Cette systématisation économise du temps lors du comptage et fournit un enregistrement traçable et exploitable à la fois pour la pratique pédagogique et pour la recherche.
+            </p>
+
+            <h3>Ce que ça ne remplace pas</h3>
+            <p>
+              Le jugement pédagogique de l'enseignant : la taxonomie des erreurs a été construite en lisant seulement deux textes, et elle est volontairement provisoire — elle devra être affinée avec un corpus plus important. L'outil signale des motifs ; il ne prescrit pas la remédiation. L'encodage n'automatise pas non plus la détection d'erreurs ; la classification reste un jugement humain, émis une fois puis enregistré. Avec seulement 14 erreurs réparties sur 2 textes, aucune prétention à la généralisation ne peut être formulée.
+            </p>
+
+            <h3>Ce que ça change dans la pratique</h3>
+            <p>
+              Cela déplace une partie du travail de correction en amont : au lieu de traiter chaque texte isolément, on peut interroger un ensemble de textes encodés pour éclairer la planification des cours — en ciblant une séance sur les types d'erreurs les plus fréquents, ou en concevant des exercices de grammaire autour des motifs observés. Avec un corpus plus large, le même schéma d'encodage pourrait suivre la progression dans le temps ou à travers une cohorte d'apprenants.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 3. Accès au corpus et aux analyses                             -->
+        <!-- ============================================================ -->
+        <section class="liens card border-0 shadow-sm">
+          <div class="card-body">
+            <h2>Explorer le corpus</h2>
+            <div class="list-group list-group-flush">
+              <a class="list-group-item list-group-item-action" href="tei_corpus.html">Corpus annoté (vue interactive)</a>
+              <a class="list-group-item list-group-item-action" href="analysis/rapport_analyse.html">Rapport d'analyse quantitative</a>
+              <a class="list-group-item list-group-item-action" href="https://github.com/valerietchekemian/TEI-Encoding-A1">Code source sur GitHub</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <p>© 2026 Valérie Tchekemian</p>
+        <p>Dernière modification : 2026-09-13</p>
+      </footer>
+    </div>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>

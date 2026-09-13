@@ -4,46 +4,69 @@
 // 1. Bouton "Afficher / masquer les corrections" : bascule entre voir
 //    uniquement le texte original (sic) ou le texte + les corrections (corr).
 // 2. Au clic sur une erreur individuelle, affiche sa catégorie dans une info-bulle.
+// 3. Menu latéral rétractable pour une navigation plus claire sur mobile.
 
 document.addEventListener("DOMContentLoaded", function () {
-  const toggleButton = document.getElementById("toggle-corrections");
   const body = document.body;
+  const toggleButton = document.getElementById("toggle-corrections");
+  const sidebar = document.getElementById("sidebar");
+  const sidebarToggleButton = document.getElementById("sidebar-toggle");
+  const sidebarCloseButton = document.getElementById("sidebar-close");
+  const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+  const setCorrectionsVisible = function (isVisible) {
+    body.classList.toggle("corrections-visible", isVisible);
+    if (toggleButton) {
+      toggleButton.textContent = isVisible ? "Masquer les corrections" : "Afficher les corrections";
+    }
+  };
+
+  if (sidebar && sidebarToggleButton) {
+    const isDesktop = function () {
+      return window.matchMedia("(min-width: 768px)").matches;
+    };
+
+    const applySidebarState = function (isOpen) {
+      sidebar.classList.toggle("is-open", isOpen);
+      body.classList.toggle("sidebar-open", isOpen);
+      sidebarToggleButton.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    sidebarToggleButton.addEventListener("click", function () {
+      const shouldOpen = !sidebar.classList.contains("is-open");
+      applySidebarState(shouldOpen);
+    });
+
+    if (sidebarCloseButton) {
+      sidebarCloseButton.addEventListener("click", function () {
+        applySidebarState(false);
+      });
+    }
+
+    if (sidebarOverlay) {
+      sidebarOverlay.addEventListener("click", function () {
+        applySidebarState(false);
+      });
+    }
+
+    window.addEventListener("resize", function () {
+      if (isDesktop()) {
+        applySidebarState(false);
+      }
+    });
+
+    if (!isDesktop()) {
+      applySidebarState(false);
+    }
+  }
 
   // Par défaut : corrections visibles
-  body.classList.add("corrections-visible");
-  if (toggleButton) {
-    toggleButton.textContent = "Masquer les corrections";
-  }
+  setCorrectionsVisible(true);
 
   if (toggleButton) {
     toggleButton.addEventListener("click", function () {
       const isVisible = body.classList.contains("corrections-visible");
-      
-      if (isVisible) {
-        // Masquer les corrections, afficher les erreurs
-        body.classList.remove("corrections-visible");
-        toggleButton.textContent = "Afficher les corrections";
-        
-        // Masquer tous les .correction et afficher tous les .erreur
-        document.querySelectorAll(".correction").forEach(el => {
-          el.style.display = "none";
-        });
-        document.querySelectorAll(".erreur").forEach(el => {
-          el.style.display = "inline";
-        });
-      } else {
-        // Afficher les corrections, masquer les erreurs
-        body.classList.add("corrections-visible");
-        toggleButton.textContent = "Masquer les corrections";
-        
-        // Afficher tous les .correction et masquer tous les .erreur
-        document.querySelectorAll(".correction").forEach(el => {
-          el.style.display = "inline";
-        });
-        document.querySelectorAll(".erreur").forEach(el => {
-          el.style.display = "none";
-        });
-      }
+      setCorrectionsVisible(!isVisible);
     });
   }
 
