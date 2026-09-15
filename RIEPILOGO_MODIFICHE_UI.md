@@ -46,6 +46,19 @@
 - `stile.css`
 - `script.js`
 
+## Refactor di qualità del codice (stile e manutenibilità)
+
+- Pulizia della logica JavaScript condivisa in `script.js`: separazione chiara tra navigazione, sidebar e toggle delle correzioni, con funzioni dedicate e nomi più esplicativi.
+- Eliminazione dello script inline dall'HTML principale di `index.html`, per ridurre duplicazioni e migliorare la leggibilità del markup.
+- Caricamento del file JavaScript con `defer` in `index.html`, in modo più standard e coerente con il markup HTML moderno.
+- Mantenuti i comportamenti esistenti e gli elementi UI originali: nessuna modifica funzionale è stata introdotta nella navigazione, nel toggle delle correzioni o nel layout principale.
+- Migliore leggibilità per interventi futuri da parte di altri sviluppatori, senza alterare il contenuto scientifico o il dataset TEI.
+- Nessuna modifica è stata applicata al file `analysis/analyze_a1.py`, come richiesto: il refactor è stato mantenuto solo sul front-end e sulla qualità del codice di presentazione.
+
+## Verifica eseguita
+
+- Validata la sintassi JavaScript con `node --check script.js`.
+
 ## File non modificati in questo branch
 
 - Nessun file relativo al contenuto scientifico, ai corpus XML/TEI o alla logica di analisi è stato alterato.
